@@ -136,6 +136,13 @@ function isPalindrome(someStr) {
 // 9. Object literal
 // Define function traverseObject(someObj)
 // Print every property and it's value.
+ function traverseObject(someObj) {
+    // let keys = Object.keys(someObj);
+    // console.log(keys);
+    // let values = Object.values(someObj);
+    // console.log(values);
+    console.log(someObj);
+ }
 
 
 // 10. Delete Element
@@ -144,6 +151,11 @@ function isPalindrome(someStr) {
 // Delete the third element in the array.
 // Print length
 // The lengths should be the same.
+function deleteElement(someArr) {
+    console.log(someArr.length);
+    delete someArr[2];
+    console.log(someArr.length);
+}
 
 
 // 11. Splice Element
