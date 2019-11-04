@@ -132,6 +132,10 @@ function isPalindrome(someStr) {
 //  ***
 //   *
 
+function printShape(shape, height, character) {
+    
+}
+
 
 // 9. Object literal
 // Define function traverseObject(someObj)
@@ -164,16 +168,31 @@ function deleteElement(someArr) {
 // Splice the third element in the array.
 // Print length
 // The lengths should be one less than the original length.
+function spliceElement(someArr) {
+    console.log(someArr.length);
+    someArr.splice(2, 1);
+    console.log(someArr.length);
+}
 
 
 // 12. Defining an object using a constructor
 // Define a function Person(name, age)
 // The following line should set a Person object to the variable john:
 // 	let john = new Person("John", 30);
-
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
 
 // 13. Defining an object using an object literal
 // Define function getPerson(name, age)
 // The following line should set a Person object to the variable john:
 // 	let john = getPerson("John", 30);
+function getPerson(name, age) {
+    let person = {
+        name: 'John',
+        age: 50
+    };
+    return person;
+}
 
