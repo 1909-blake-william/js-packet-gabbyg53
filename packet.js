@@ -12,7 +12,7 @@
 // Return the nth number in the fibonacci sequence.
 function fib(n){
     let arr = [0,1];
-    if (n ==0 ) return 0;
+    if (n === 0 ) return 0;
     else if (n <= 2) return 1;
     for (let i = 3; i <= n; i++){
         arr[i] = arr[i-1] + arr[i-2];
@@ -73,14 +73,18 @@ function factorial(someNum) {
 // Return the substring contained between offset and (offset + length) inclusively.
 // If incorrect input is entered, use the alert function and describe why the input was incorrect.
 function substring(someStr, length, offset) {
-    let output = '';
-    for (let i = offset; i < length; i++) {
-        if (length > someStr.length) {
-          alert('length indicated is out of bounds');
-        }
-        output += someStr[i];
+    if (length < 0 || offset < 0) {
+        alert('length or offset less is than 0');
     }
-    return output;
+    else if (length > someStr.length) {
+        alert('length indicated is out of bounds');
+    }
+    else if (offset > someStr.length) {
+        alert('offset is greater than length of string');
+    } 
+    else {
+        return someStr.substring(offset,length);
+    }
 }
 
 
@@ -133,7 +137,7 @@ function isPalindrome(someStr) {
 //   *
 
 function printShape(shape, height, character) {
-    
+
 }
 
 
