@@ -141,17 +141,17 @@ function printShape(shape, height, character) {
         console.log('shapes need to be at least height 2');
     }
     if (character.length > 1) {
-        console.log('characters must be one character to print shapes');
+        console.log('string must be one character to print shapes');
     }
     switch(shape) {
         case 'Square':
                 let outputSquare = '';
-                for (let i = 0; i < height; i++) {
+                for (let i = 0; i < height; i++) { //rows
                     outputSquare += ' ';
-                    for (let j = 0; j < height; j++) {
+                    for (let j = 0; j < height; j++) { //cols
                        outputSquare += character
                     }
-                    outputSquare += '\n';
+                    outputSquare += '\n'; //next line
                 }
                 console.log(outputSquare);
             break;
@@ -163,30 +163,30 @@ function printShape(shape, height, character) {
                     for (let j = 0; j <= i; j++) { //cols
                         outputTriangle += character;
                     }
-                    outputTriangle += '\n';
+                    outputTriangle += '\n'; //next line
                 }
                 console.log(outputTriangle);
             break;
 
         case 'Diamond':
                 let outputDiamond = '';
-                for (let i  = 0; i < height; i++) {
-                    for (let j = height-i; j > 1; j--) {
+                for (let i  = 0; i < height; i++) { //top half
+                    for (let j = height-i; j > 1; j--) { //row
                         outputDiamond += ' ';
                     }
                     for (let k = 0; k <= i; k++) {
-                    outputDiamond += character + ' ';
+                    outputDiamond += character + ' '; //col
                     }
-                    outputDiamond += '\n';
+                    outputDiamond += '\n'; //next line
                 }
-                for (let i  = height-1; i > 0; i--) {
-                    for (let j = 0; j < height-i; j++) {
+                for (let i  = height-1; i > 0; i--) { //bottom half
+                    for (let j = 0; j < height-i; j++) { //rows
                         outputDiamond += ' ';
                     }
                     for (let k = 0; k < i; k++) {
-                        outputDiamond += character + ' ';
+                        outputDiamond += character + ' '; //cols
                     }
-                    outputDiamond += '\n';
+                    outputDiamond += '\n'; //next line
                 }
 
                 console.log(outputDiamond);
@@ -300,8 +300,8 @@ function Person(name, age) {
 // 	let john = getPerson("John", 30);
 function getPerson(name, age) {
     let person = {
-        name: 'John',
-        age: 50
+        name: name,
+        age: age
     };
     return person;
 }
