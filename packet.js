@@ -138,6 +138,57 @@ function isPalindrome(someStr) {
 
 function printShape(shape, height, character) {
 
+     if (shape === 'square' | 'Square') {
+        let output = '';
+        for (let i = 0; i < height; i++) { //rows
+            output += ' ';
+            for (let j = 0; j < height; j++) { //columns
+                output += character
+            }
+            output += '\n';
+        }
+        console.log(output);
+     }
+     else if (shape === 'triangle' | 'Triange') {
+        let output = '';
+        for (let i = 0; i < height; i++) { //rows
+            output += ' ';
+            for (let j = 0; j < i; j++) { //cols
+                output += character;
+            }
+            output+='\n';
+        }
+        console.log(output);
+     }
+     else if (shape === 'diamond' | 'Diamond') {}
+     else {
+         console.log('shape mentioned is not suppored by this function, please choose: triange, square or diamond');
+     }
+
+    // switch(shape) {
+    //     case 'Square':
+                // let output = '';
+                // for (let i = 0; i < height; i++) {
+                //     output += ' ';
+                //     for (let j = 0; j < height; j++) {
+                //         output += character
+                //     }
+                //     output += ' \n';
+                // }
+                // console.log(output);
+
+    //         break;
+    //     case 'Triangle':
+    //       // code block
+    //         break;
+    //     case 'Diamond':
+    //         break;
+    //     default:
+    //         console.log('shape mentioned is not suppored by this function, please choose: triange, square or diamond');
+    //       // code block
+    //   }
+
+
 }
 
 
