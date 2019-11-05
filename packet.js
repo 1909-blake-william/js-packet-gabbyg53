@@ -170,21 +170,21 @@ function printShape(shape, height, character) {
 
         case 'Diamond':
                 let outputDiamond = '';
-                for (let i  = 0; i < height; i++) { //top half
+                for (let i  = 0; i < height/2; i++) { //top half
                     for (let j = height-i; j > 1; j--) { //row
                         outputDiamond += ' ';
                     }
                     for (let k = 0; k <= i; k++) {
-                    outputDiamond += character + ' '; //col
+                    outputDiamond += character + character; //col
                     }
                     outputDiamond += '\n'; //next line
                 }
-                for (let i  = height-1; i > 0; i--) { //bottom half
+                for (let i  = (height-1)/2; i > 0; i--) { //bottom half
                     for (let j = 0; j < height-i; j++) { //rows
                         outputDiamond += ' ';
                     }
                     for (let k = 0; k < i; k++) {
-                        outputDiamond += character + ' '; //cols
+                        outputDiamond += character + character; //cols
                     }
                     outputDiamond += '\n'; //next line
                 }
@@ -195,6 +195,8 @@ function printShape(shape, height, character) {
         default:
             console.log('shape mentioned is not suppored by this function, please choose: triange, square or diamond');
         }
+
+        //height /2 + .5
 
     // if (shape === 'square' | 'Square') {
     //     let output = '';
