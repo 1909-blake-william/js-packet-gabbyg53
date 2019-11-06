@@ -104,16 +104,23 @@
     // Find the html element that contains "USA" in the data-customAttr.
     // Print that element's contents.
     function getUSA() {
-      document.querySelectorAll("USA");
-      for (let i = 0; i < document.querySelectorAll.length; i++) {
-
-      }
+      let usa = document.querySelector("[data-customAttr]").innerHTML;
+      console.log(usa);
     }
 
 
     // 2. Sales
     // Define function getPeopleInSales()
     // Print the names of all the people in the sales department.
+    function getPeopleInSales() {
+      let pplInSales = document.getElementsByClassName('empName');
+      for (let i = 0; i < pplInSales.length; i++) {
+        if (pplInSales[i].nextElementSibling.innerText === 'Sales') {
+          console.log(pplInSales[i].innerText);
+        }
+      }
+    }
+
 
 
     // 3. Click Here
