@@ -11,11 +11,15 @@
 // Define function: fib(n)
 // Return the nth number in the fibonacci sequence.
 function fib(n){
-    let arr = [0,1];
+    let arr = [0,1,1];
+    if (n < 0) {
+        console.log('please enter positve number');
+        return null;
+    }
     if (n === 0 ) return 0;
     else if (n <= 2) return 1;
     for (let i = 3; i <= n; i++){
-        arr[i] = arr[i-1] + arr[i-2];
+        arr.push(arr[i-1] + arr[i-2]);
     }
     return arr[n];
 }
@@ -62,7 +66,11 @@ function reverseStr(someStr) {
 // Define function: factorial(someNum)
 // Use recursion to compute and return the factorial of someNum.
 function factorial(someNum) {
-    if (someNum === 0) return 1;
+    if (someNum < 0) { 
+        console.log('please enter a positive number');
+        return null;
+    }
+    else if (someNum === 0) return 1;
     return someNum*factorial(someNum-1);
 }
 
