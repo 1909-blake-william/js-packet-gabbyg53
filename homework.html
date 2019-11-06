@@ -127,6 +127,24 @@
     // Define function getAnchorChildren()
     // Find all anchor elements with a <span> child.
     // Print the contents of <span>
+    function getAnchorChildren() {
+        //let anchor = document.getElementsByTagName('a');
+        // for (let i = 0; i < anchor.length; i++) {
+        //   if (anchor[i].getElementsByTagName('span')) {
+        //     console.log(anchor[i].innerText);
+        //   }
+        // }
+        let kids = document.querySelectorAll('a');
+        for (let i = 0; i < kids.length; i++) {
+          console.log(kids[i].innerText)
+        }
+      //  let kids = document.querySelector('a').children;
+        //  let kids = document.querySelectorAll('a');
+        //  for (let i = 0; i < kids.length; i++) {
+        //    if (document.getElementsByTagName('span')) { 
+        //      console.log(kids[i].innerText);}
+        //  }
+    } 
 
 
     // 4. Hobbies
