@@ -128,22 +128,11 @@
     // Find all anchor elements with a <span> child.
     // Print the contents of <span>
     function getAnchorChildren() {
-        //let anchor = document.getElementsByTagName('a');
-        // for (let i = 0; i < anchor.length; i++) {
-        //   if (anchor[i].getElementsByTagName('span')) {
-        //     console.log(anchor[i].innerText);
-        //   }
-        // }
-        let kids = document.querySelectorAll('a');
-        for (let i = 0; i < kids.length; i++) {
-          console.log(kids[i].innerText)
-        }
-      //  let kids = document.querySelector('a').children;
-        //  let kids = document.querySelectorAll('a');
-        //  for (let i = 0; i < kids.length; i++) {
-        //    if (document.getElementsByTagName('span')) { 
-        //      console.log(kids[i].innerText);}
-        //  }
+         let kids = document.querySelectorAll('a > span');
+         //a > span == select every 'span' element w/ parent 'a'
+         for (let i = 0; i < kids.length; i++) {
+           console.log(kids[i]); 
+         }
     } 
 
 
@@ -151,6 +140,13 @@
     // Define function getHobbies()
     // Find all checked options in the 'skills' select element.
     // Print the value and the contents.
+    function getHobbies() {
+    //getSkills?
+      let skills = document.getElementsByName('skills');
+      for (let i = 0; i < skills.length; i++) {
+        console.log(skills[i].selectedOptions[i].innerHTML);
+      }
+    }
 
 
     // 5. Custom Attribute
@@ -183,6 +179,7 @@
     // 	"So you like green more than blue now?"
     // In this example, green is the new value and blue is the old value.
     // Make the background color (of all favoriteColor radio buttons) the newly selected favoriteColor
+      //bootstrap edit radio color
 
 
     // 9. Show/Hide Event
