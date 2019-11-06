@@ -154,6 +154,12 @@
     // Find all elements with "data-customAttr" attribute
     // Print the value of the attribute.
     // Print the element that has the attribute.
+    function getCustomAttribute() {
+       let elements = document.querySelectorAll("[data-customAttr]");
+       for (let i = 0; i < elements.length; i++) {
+         console.log(elements[i].innerText);
+       }
+   }
 
 
     // 6. Sum Event
@@ -166,6 +172,12 @@
     // Put the sum in the <span> element.
     // If values cannot be added, put "Cannot add" in the <span> element
 
+        // input type="id" class="nums"
+        document.getElementById("sum").addEventListener("change", sumEvent);
+          function sumEvent() {
+          let x = document.getElementById("sum");
+          console.log(x);
+        
 
     // 7. Skills Event
     // When user selects a skill, create an alert with a message similar to:
