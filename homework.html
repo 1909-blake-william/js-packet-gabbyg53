@@ -133,7 +133,7 @@
          for (let i = 0; i < kids.length; i++) {
            console.log(kids[i]); 
          }
-    } 
+    }
 
 
     // 4. Hobbies
@@ -173,11 +173,27 @@
     // If values cannot be added, put "Cannot add" in the <span> element
 
         // input type="id" class="nums"
-        document.getElementById("sum").addEventListener("change", sumEvent);
-          function sumEvent() {
+        let num1 = document.getElementById("num1");
+        let num2 =document.getElementById("num2");
+
+        num1.addEventListener("input", key => {
+          sumEvent()
+        });
+        num2.addEventListener("input", key => {
+          sumEvent()
+        });
+
+        function sumEvent() {
           let x = document.getElementById("sum");
-          console.log(x);
-        
+          x.innerText = Number(num1.value) + Number(num2.value);
+         // console.log(Number(num1.value) + Number(num2.value));
+           if (Number.isNaN(Number(num1.value) + Number(num2.value)) ) {
+             x.innerText = 'Cannot add';
+             console.log('Cannot add');
+           }
+       
+        }
+
 
     // 7. Skills Event
     // When user selects a skill, create an alert with a message similar to:
