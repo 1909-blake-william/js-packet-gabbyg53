@@ -139,6 +139,7 @@
     //getAnchorChildren();
 
 
+
     // 4. Hobbies
     // Define function getHobbies()
     // Find all checked options in the 'skills' select element.
@@ -153,6 +154,7 @@
     //getHobbies();
 
 
+
     // 5. Custom Attribute
     // Define function getCustomAttribute()
     // Find all elements with "data-customAttr" attribute
@@ -163,8 +165,9 @@
        for (let i = 0; i < elements.length; i++) {
          console.log(elements[i].innerText);
        }
-   }
-   //getCustomAttribute();
+    }
+    //getCustomAttribute();
+
 
 
     // 6. Sum Event
@@ -191,12 +194,11 @@
     function sumEvent() {
       let x = document.getElementById("sum");
       x.innerText = Number(num1.value) + Number(num2.value);
-         // console.log(Number(num1.value) + Number(num2.value));
       if (Number.isNaN(Number(num1.value) + Number(num2.value)) ) {
         x.innerText = 'Cannot add';
-             //console.log('Cannot add');
       }  
     }
+
 
 
     // 7. Skills Event
@@ -205,12 +207,11 @@
     // NOTE: no alert should appear when user deselects a skill.
       
       //set to first element, if changed from first element ask r u sure?
-      let skills = document.getElementsByName('skills')[0];
-      skills.addEventListener('change', msg => {  
-        alert(`Are you sure that ${skills.value} is one of your skills?`);
-      });
+    let skills = document.getElementsByName('skills')[0];
+    skills.addEventListener('change', msg => {  
+      alert(`Are you sure that ${skills.value} is one of your skills?`);
+    });
        
-
 
 
     // 8. Favorite Color Event
@@ -222,27 +223,28 @@
      
       //bootstrap edit radio color
       //assign new fav to old fav on each iteration
-       let oldFav = null;
-       let newFav = null;
-       let favColors = document.getElementsByName('favoriteColor');         
+    let oldFav = null;
+    let newFav = null;
+    let favColors = document.getElementsByName('favoriteColor');         
       
-       for (let i = 0; i < favColors.length; i++) {
-         favColors[i].addEventListener('click', changeFav);
-       }
+    for (let i = 0; i < favColors.length; i++) {
+      favColors[i].addEventListener('click', changeFav);
+    }
             
-       function changeFav() {
-        oldFav = newFav;
-        let radio = document.getElementsByName('favoriteColor');
-        for (let i = 0; i < radio.length; i++ ) {
-          if (radio[i].checked === true) {
-            newFav = radio[i].value;
-            if (oldFav !== null) {
-              alert(`So you like ${newFav} more than ${oldFav} now?`);
-              favColors[i].style.color = `${newFav}`;
-            }
+    function changeFav() {
+      oldFav = newFav;
+      let radio = document.getElementsByName('favoriteColor');
+      for (let i = 0; i < radio.length; i++ ) {
+        if (radio[i].checked === true) {
+          newFav = radio[i].value;
+          if (oldFav !== null) {
+            alert(`So you like ${newFav} more than ${oldFav} now?`);
+            favColors[i].style.color = `${newFav}`;
           }
         }
-       }
+      }
+    }
+
 
 
     // 9. Show/Hide Event
@@ -251,18 +253,18 @@
     // 	Show the name if hidden.
 
       //mouseover
-   // function showHideEvent() {
-      let employees = document.getElementsByClassName('empName');
-      for (let i = 0; i < employees.length; i++) {
-        employees[i].addEventListener('mouseover', hover => {
-          if (employees[i].style.color === 'white') {
-            employees[i].style.color = 'black';
-          }
-          else {
-            employees[i].style.color = 'white';
-          }
-        });
-      }
+    // function showHideEvent() {
+    let employees = document.getElementsByClassName('empName');
+    for (let i = 0; i < employees.length; i++) {
+      employees[i].addEventListener('mouseover', hover => {
+        if (employees[i].style.color === 'white') {
+          employees[i].style.color = 'black';
+        }
+        else {
+          employees[i].style.color = 'white';
+        }
+      });
+    }
     //}
     //showHideEvent();
   
@@ -281,7 +283,7 @@
       let sec = today.getSeconds();
       let ampm = '';
 
-  // add a zero in front of numbers<10
+      // add a zero in front of numbers<10
       if (min < 10) {
         min = '0' + min;
       }
@@ -308,9 +310,17 @@
     // 	<p id="helloWorld">Hello, World!</p>
     // Three seconds after a user clicks on this element, change the text to a random color.
 
+    let hw = document.getElementById('helloWorld');
+    hw.addEventListener('click', randColor);
+       
     function randColor() {
-      setTimeout(function() {}, 3000);
+      let r = Math.floor(Math.random() * 256);
+      let g = Math.floor(Math.random() * 256);
+      let b = Math.floor(Math.random() * 256);
+      let color = `rgb(${r},${g},${b})`;
+      setTimeout(function() { hw.style.color = color}, 3000);
     }
+
 
 
     // 12. Walk the DOM
@@ -318,10 +328,14 @@
     // This function should traverse every node in the DOM. Use recursion.
     // On each node, call func(node).
     
-    //walkTheDOM(node, func) {}
-
-
-
+    function walkTheDOM(node, func) {
+      let n = node.childNodes;
+      for (let i = 0; i < n.length; i++) {
+        func(n[i]);
+        walkTheDOM(n[i], func);
+      }
+    } walkTheDOM(document,console.log);
+  
   </script>
 
 </body>
