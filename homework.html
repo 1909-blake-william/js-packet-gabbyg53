@@ -219,17 +219,30 @@
     // 	"So you like green more than blue now?"
     // In this example, green is the new value and blue is the old value.
     // Make the background color (of all favoriteColor radio buttons) the newly selected favoriteColor
+     
       //bootstrap edit radio color
-
-    //   let favColor = document.getElementsByClassName('favoriteColor');
-    //   let colors = document.getElementsByName('colors');
-    //   for (let i = 0; i < colors.length; i++ ) {
-    //    colors.addEventListener('change', msg => {
-    //      let newFav = msg.target.value;
-    //      if (!favColor) {
-    //     alert(`So you like ${newFav.value} more than ${favColor.value} now?`);}
-    //   });
-    // }
+      //assign new fav to old fav on each iteration
+       let oldFav = null;
+       let newFav = null;
+       let favColors = document.getElementsByName('favoriteColor');         
+      
+       for (let i = 0; i < favColors.length; i++) {
+         favColors[i].addEventListener('click', changeFav);
+       }
+            
+       function changeFav() {
+        oldFav = newFav;
+        let radio = document.getElementsByName('favoriteColor');
+        for (let i = 0; i < radio.length; i++ ) {
+          if (radio[i].checked === true) {
+            newFav = radio[i].value;
+            if (oldFav !== null) {
+              alert(`So you like ${newFav} more than ${oldFav} now?`);
+              favColors[i].style.color = `${newFav}`;
+            }
+          }
+        }
+       }
 
 
     // 9. Show/Hide Event
@@ -261,12 +274,13 @@
     // Show the current time in this element in this format: 9:05:23 AM
     // The time should be accurate to the second without having to reload the page.
     
-    function startTime() {
+    function currentTime() {
       let today = new Date();
       let hr = today.getHours();
       let min = today.getMinutes();
       let sec = today.getSeconds();
-      
+      let ampm = '';
+
   // add a zero in front of numbers<10
       if (min < 10) {
         min = '0' + min;
@@ -274,7 +288,7 @@
       if (sec < 10) {
         sec = '0' + sec;
       }
-      let ampm = '';
+    
       if ( hr >= 12 ) {
         ampm += 'PM';
       }
@@ -283,11 +297,9 @@
       }
 
       document.getElementById('currentTime').innerHTML = hr + ':' + min + ':' + sec + ' ' + ampm;
-      let t = setTimeout(function() {
-        startTime()
-      }, 500);
+      let t = setTimeout(function() { currentTime() }, 1000);
     }
-    startTime();
+    currentTime();
 
 
 
@@ -296,11 +308,20 @@
     // 	<p id="helloWorld">Hello, World!</p>
     // Three seconds after a user clicks on this element, change the text to a random color.
 
+    function randColor() {
+      setTimeout(function() {}, 3000);
+    }
+
 
     // 12. Walk the DOM
     // Define function walkTheDOM(node, func)
     // This function should traverse every node in the DOM. Use recursion.
     // On each node, call func(node).
+    
+    //walkTheDOM(node, func) {}
+
+
+
   </script>
 
 </body>
