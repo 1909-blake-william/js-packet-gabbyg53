@@ -80,7 +80,7 @@ function factorial(someNum) {
 // Return the substring contained between offset and (offset + length) inclusively.
 // If incorrect input is entered, use the alert function and describe why the input was incorrect.
 function substring(someStr, length, offset) {
-    if (length < 0 || offset < 0) {
+    if (length < 0 | offset < 0) {
         alert('length or offset is less than 0');
     }
     else if (length > someStr.length) {
@@ -200,59 +200,10 @@ function printShape(shape, height, character) {
             break;
 
         default:
-            console.log('shape mentioned is not suppored by this function, please choose: triange, square or diamond');
+            console.log('shape mentioned is not suppored by this function, please choose: Triange, Square or Diamond');
         }
 
         //height /2 + .5
-
-    // if (shape === 'square' | 'Square') {
-    //     let output = '';
-    //     for (let i = 0; i < height; i++) { //rows
-    //         output += ' ';
-    //         for (let j = 0; j < height; j++) { //columns
-    //             output += character
-    //         }
-    //         output += '\n';
-    //     }
-    //     console.log(output);
-    // }
-    // else if (shape === 'triangle' | 'Triange') {
-    //     let output = '';
-    //     for (let i = 0; i < height; i++) { //rows
-    //         output += ' ';
-    //         for (let j = 0; j <= i; j++) { //cols
-    //             output += character;
-    //         }
-    //         output+='\n';
-    //     }
-    //     console.log(output);
-    // }
-    // else if (shape === 'diamond' | 'Diamond') {
-    //     let output = '';
-    //     for (let i  = 0; i < height; i++) {
-    //         for (let j = height-i; j > 1; j--) {
-    //             output += ' ';
-    //         }
-    //         for (let k = 0; k <= i; k++) {
-    //             output += character + ' ';
-    //         }
-    //         output+='\n';
-    //       }
-    //        for (let i  = height-1; i > 0; i--) {
-    //          for (let j = 0; j < height-i; j++) {
-    //              output += ' ';
-    //          }
-    //          for (let k = 0; k < i; k++) {
-    //              output += character + ' ';
-    //          }
-    //          output+='\n';
-    //        }
-
-    //     console.log(output);
-    // }
-    // else {
-    //     console.log('shape mentioned is not suppored by this function, please choose: triange, square or diamond');
-    // }
 }
 
 
